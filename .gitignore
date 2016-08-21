@@ -28,5 +28,9 @@
 *.out
 *.app
 
+#Gitignore itself
+.gitignore
+.vscode
+
 #directories
 sandbox/
