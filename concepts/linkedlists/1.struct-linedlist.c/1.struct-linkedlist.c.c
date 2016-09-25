@@ -8,6 +8,7 @@ typedef struct IntElement {
     int data;
 } IntElement;
 
+// this function creates a linked list and returns the item
 IntElement* createALinkedList(int n){
     IntElement* head = NULL;
     IntElement* prev = head;
@@ -18,10 +19,7 @@ IntElement* createALinkedList(int n){
         if (i == 0){
             head = element;
             prev = element;
-            //printf("Value of head->data: %d\n",head->data);
         }else{
-            //printf("Value of i: %d\n",i);
-            //printf("Value of prev->data: %d\n",prev->data);
             prev->next = element;
             prev = prev->next;
         }
