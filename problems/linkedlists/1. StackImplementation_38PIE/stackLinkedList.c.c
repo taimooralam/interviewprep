@@ -1,7 +1,7 @@
 #define AUTHOR "TAIMOOR"
 //run command: gcc -o exe.exe stackLinkedList.c.c -std=c99
 #define STARTING_DATE "25-9-2016"
-#define ENDING_DATE "3-10-2016"
+#define ENDING_DATE "15-10-2016"
 #define PROGRAM_NAME "STACK IMPLEMENTATION"
 #define BOOK_NAME "PROGRAMMING INTERVIEWS EXPOSED"
 #define BOOK_PAGE 38
@@ -28,11 +28,17 @@ bool deleteStack ( Element ** stack );
 
 // Both the push and the pop operations change the first element in the list. The calling routine's stack pointer must be modified to reflect this change, but any change you make to the pointer that is passed to these functions won't be propagated back to the calling function. You can solve this problem by having both routines take a pointer to a pointer to the stack. This way you can change the calling routines pointer so that it continues to point at the first element of the list.
 bool push ( Element ** stack , void * data);
-bool pop ( Element ** stack , void * data);
+bool pop ( Element ** stack , void ** data);
 int top (Element ** stack);
 
 //this function prints a single element data in the stack
 void printElement(Element * element);
+
+//this function prints the entire stack once from head to tail
+void printStack(Element ** stack);
+
+//this function pushes random values to the stack
+void pushRandomValuesToStack(Element ** stack);
 
 void printIntroduction();
 
@@ -48,22 +54,62 @@ int main(){
     }
 
     printf("Pushing ...\n");
-    for (int i = 0 ; i < 10 ; i++){
-        int integer = i;
-        if (push(stack, &integer)){
-            printf("%d, ",top(stack));
-        }
+
+    //pushRandomValuesToStack(stack);
+
+    int integer = rand() % 100;
+    if (push(stack, &integer)){
+         printf("Pushed: %d, ",integer);
+    }
+
+    int integer1 = rand() % 100;
+    if (push(stack, &integer1)){
+         printf("Pushed: %d, ",integer1);
+    }
+
+    int integer2 = rand() % 100;
+    if (push(stack, &integer2)){
+         printf("Pushed: %d, ",integer2);
+    }
+
+    int integer3 = rand() % 100;
+    if (push(stack, &integer3)){
+         printf("Pushed: %d, ",integer3);
+    }
+
+    int integer4 = rand() % 100;
+    if (push(stack, &integer4)){
+         printf("Pushed: %d, ",integer4);
+    }
+
+    int integer5 = rand() % 100;
+    if (push(stack, &integer5)){
+         printf("Pushed: %d, ",integer5);
+    }
+
+    int integer6 = rand() % 100;
+    if (push(stack, &integer6)){
+         printf("Pushed: %d, ",integer6);
     }
 
     printf("\n%d is now on top of the stack ...\n",top(stack));
 
+    printStack(stack);
+
     printf("Poping ... \n");
-    int i;
-    if (pop(stack, &i)){
-        //Element * el2 = *stack;
-        //printf("%p\n", el2);
-        printf("%d popped",i);
+    int  * data;
+    if (pop(stack, &data)){
+        printf("%d popped \n", *data);
     }
+
+   if (pop(stack, &data)){
+        printf("%d popped \n", *data);
+    }
+
+    if (pop(stack, &data)){
+        printf("%d popped \n", *data);
+    }
+
 
     printf("Deleting ...\n");
     if(deleteStack(stack)){
@@ -111,7 +157,7 @@ bool push ( Element ** stack , void * data){
 }
 
 
-bool pop ( Element ** stack, void * data){
+bool pop ( Element ** stack, void ** data){
     // check if the stack exists
     if (!(*stack)) return false;
 
@@ -121,22 +167,13 @@ bool pop ( Element ** stack, void * data){
     //The pop operation checks if the stack is not empty, fetches the data from the top element, adjusts the stack pointer, and frees the element that is no longer needed.
     
     //PIE way
-    Element * elem;
-    if (!(elem = *stack)) return false;
+    Element * elem = *stack;
+    if ( !elem ) return false;
 
-    data = elem->data;
-    int *i = (int*)data;
-    printf("popping: %d\n",*i);
-    *stack = elem->next;
+    *data = elem->data;
+    *stack = (*stack)->next;
     free(elem);
 
-    printf("%d is now on top of the stack ... \n",top(stack));
-
-    // MY WAY
-    //data = (*stack)->data;
-    //Element * next =  (*stack)->next;
-    //free(*stack);
-    //*stack = next;
     return true;
 }
 
@@ -146,7 +183,22 @@ int top(Element ** stack){
 }
 
 void printElement(Element * element){
-    printf("%s, ",(char*)element->data);
+    int * i = (int*)element->data;
+    printf("%d, ",*i);
+}
+
+void printStack( Element ** stack ) {
+    printf("Printing stack ... \n");
+    Element *element = *stack;
+    while (element != NULL) {
+        printElement(element);
+        element = element->next;
+    }
+}
+
+void pushRandomValuesToStack(Element ** stack){
+    
+
 }
 
 void printIntroduction(){
