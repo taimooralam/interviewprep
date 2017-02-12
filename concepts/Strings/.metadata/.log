@@ -1,0 +1,115 @@
+!SESSION 2017-02-12 23:10:50.350 -----------------------------------------------
+eclipse.buildId=4.6.1.M20160907-1200
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.ui 2 0 2017-02-12 23:11:44.995
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2017-02-12 23:11:44.995
+!MESSAGE Cannot bind to an undefined command: plug-in='com.genuitec.eclipse.theming.ui', id='com.genuitec.myeclipse.help.darktheme.commandid'
+
+!ENTRY com.genuitec.eclipse.monitor 4 0 2017-02-12 23:12:29.114
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in com.genuitec.eclipse.monitor.internal.MonitorPlugin.stop() of bundle com.genuitec.eclipse.monitor.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ExceptionInInitializerError
+	at com.jniwrapper.util.ProcessorInfo.b(SourceFile:95)
+	at com.jniwrapper.util.ProcessorInfo.getInstance(SourceFile:88)
+	at com.genuitec.eclipse.core.activation.SystemIdFactory.D(Unknown Source)
+	at com.genuitec.eclipse.core.activation.SystemIdFactory.create(Unknown Source)
+	at com.genuitec.eclipse.core.LicenseUtil.getSystemId(Unknown Source)
+	at com.genuitec.eclipse.monitor.internal.collector.server.ServerMetricsCollector.getSystemId(ServerMetricsCollector.java:522)
+	at com.genuitec.eclipse.monitor.internal.collector.server.ServerMetricsCollector.saveToFile(ServerMetricsCollector.java:360)
+	at com.genuitec.eclipse.monitor.internal.collector.server.ServerMetricsCollector.stopMonitoring(ServerMetricsCollector.java:221)
+	at com.genuitec.eclipse.monitor.internal.MetricsManager.stopMonitoring(MetricsManager.java:239)
+	at com.genuitec.eclipse.monitor.internal.MetricsManager.dispose(MetricsManager.java:161)
+	at com.genuitec.eclipse.monitor.internal.MonitorPlugin.stop(MonitorPlugin.java:62)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Caused by: com.jniwrapper.LibraryNotFoundException: Cannot find JNIWrapper native library (libjniwrap64.so) in java.library.path: /usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Root exception:
+java.lang.ExceptionInInitializerError
+	at com.jniwrapper.util.ProcessorInfo.b(SourceFile:95)
+	at com.jniwrapper.util.ProcessorInfo.getInstance(SourceFile:88)
+	at com.genuitec.eclipse.core.activation.SystemIdFactory.D(Unknown Source)
+	at com.genuitec.eclipse.core.activation.SystemIdFactory.create(Unknown Source)
+	at com.genuitec.eclipse.core.LicenseUtil.getSystemId(Unknown Source)
+	at com.genuitec.eclipse.monitor.internal.collector.server.ServerMetricsCollector.getSystemId(ServerMetricsCollector.java:522)
+	at com.genuitec.eclipse.monitor.internal.collector.server.ServerMetricsCollector.saveToFile(ServerMetricsCollector.java:360)
+	at com.genuitec.eclipse.monitor.internal.collector.server.ServerMetricsCollector.stopMonitoring(ServerMetricsCollector.java:221)
+	at com.genuitec.eclipse.monitor.internal.MetricsManager.stopMonitoring(MetricsManager.java:239)
+	at com.genuitec.eclipse.monitor.internal.MetricsManager.dispose(MetricsManager.java:161)
+	at com.genuitec.eclipse.monitor.internal.MonitorPlugin.stop(MonitorPlugin.java:62)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.jniwrapper.LibraryNotFoundException: Cannot find JNIWrapper native library (libjniwrap64.so) in java.library.path: /usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+!SESSION 2017-02-12 23:12:30.706 -----------------------------------------------
+eclipse.buildId=4.6.1.M20160907-1200
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -data /home/alam/code/interviewprep/concepts/Strings -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.recommenders.types.rcp 1 4 2017-02-12 23:31:07.659
+!MESSAGE Full project indexing required:
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar
+
+!STACK 0
+org.eclipse.recommenders.utils.Logs$LogTraceException
+	at org.eclipse.recommenders.utils.Logs$LogTraceException.newTrace(Logs.java:381)
+	at org.eclipse.recommenders.utils.Logs.log(Logs.java:134)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.needsRebuild(ProjectTypesIndex.java:169)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.startUp(ProjectTypesIndex.java:122)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Thread.java:745)

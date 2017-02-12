@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1486937630224_1" label="Strings" name="Strings">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/StringBuffer" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1486937520079_0" label="Window Working Set" name="Aggregate for window 1486937520078"/>
+<mruList name="Strings"/>
+</workingSetManager>

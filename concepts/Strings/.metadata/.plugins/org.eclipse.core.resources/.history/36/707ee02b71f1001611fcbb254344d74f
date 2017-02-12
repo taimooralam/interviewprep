@@ -1,0 +1,17 @@
+//Author: Taimoor Alam
+//Book: Cracking the Coding Interview Lakhman
+//Page: 72
+//Topic: String Buffer
+
+public class StringBufferWorker {
+	
+		//main function
+		public static void main (String[] args){
+				StringBuffer sentence = new StringBuffer();
+				
+		}
+		
+		public static String joinWords(String []words){
+			
+		}
+}

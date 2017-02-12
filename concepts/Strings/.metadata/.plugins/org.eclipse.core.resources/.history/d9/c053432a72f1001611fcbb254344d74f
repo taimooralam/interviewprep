@@ -1,0 +1,11 @@
+import java.util.ArrayList;
+
+public class MyStringBuffer {
+	
+	private ArrayList<String> arrayOfStrings;
+	
+	public MyStringBuffer(){
+		arrayOfStrings = new ArrayList<String>();
+	}
+		
+}
